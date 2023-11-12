@@ -16,12 +16,12 @@ if (!isNaN(userBirth) && userBirth !== "" && userBirth !== null) {
                 cityMessage = "You live in the capital of Great Britain."
                 break;
             default:
-                cityMessage = `You live in the city of ${userCity}`;
+                cityMessage = `You live in the city of ${userCity}.`;
                 break;
         }
 
         let userSport = prompt("What is your favorite sport?")
-        if (userSport !== "" && userCity !== null) {
+        if (userSport !== "" && userSport !== null) {
 
             /* Варіант 1. Більш логічний як для мене. */
             let sportMessage = `Your favorite sport is ${userSport}.`
