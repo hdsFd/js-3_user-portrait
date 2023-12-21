@@ -1,5 +1,5 @@
 function isValidNum(num) {
-    if (!isNaN(num) && num !== null && num.trim()) {
+    if (!isNaN(num) && num !== null && num.trim() !== "") {
         return true;
     } else {
         return false;
