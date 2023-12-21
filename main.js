@@ -1,9 +1,25 @@
+function isValidNum(num) {
+    if (!isNaN(num) && num !== null && num.trim()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isValidStr(str) {
+    if (isNaN(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 const currentYear = new Date().getFullYear();
-let userBirth = prompt("Enter your year of birth.");
-if (!isNaN(userBirth) && userBirth !== "" && userBirth !== null) {
+const userBirth = prompt("Enter your year of birth.");
+if (isValidNum(userBirth)) {
     const userAge = currentYear - userBirth;
-    let userCity = prompt("What city do you live in?");
-    if (userCity !== "" && userCity !== null) {
+    const userCity = prompt("What city do you live in?");
+        if (isValidStr(userCity)) {
         let cityMessage;
         switch (userCity) {
             case "Kyiv":
@@ -20,11 +36,10 @@ if (!isNaN(userBirth) && userBirth !== "" && userBirth !== null) {
                 break;
         }
 
-        let userSport = prompt("What is your favorite sport?")
-        if (userSport !== "" && userSport !== null) {
-
+        const userSport = prompt("What is your favorite sport?")
+        if (isValidStr(userSport)) {
             /* Варіант 1. Більш логічний як для мене. */
-            let sportMessage = `Your favorite sport is ${userSport}.`
+            const sportMessage = `Your favorite sport is ${userSport}.`
             switch (userSport) {
                 case "football":
                     alert("Cool! Do you want to be like Lionel Messi?")
@@ -58,7 +73,7 @@ if (!isNaN(userBirth) && userBirth !== "" && userBirth !== null) {
              }
             */
 
-            alert(`You are ${userAge}. ${cityMessage} ${sportMessage}`)
+            alert(`You are ${userAge}. ${"\n" + cityMessage} ${"\n" + sportMessage}`)
 
         } else if (userSport === null) {
             alert("It's a pity that you didn't want to enter your favorite sport.");
